@@ -1,0 +1,55 @@
+<html>
+  <head>
+    <title>BrainTrain</title>
+
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Custom -->
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+  </head>
+  <body>
+    <div id="text"></div>
+    <input type="text" id="input">
+    <div id="score">
+      Wrong:              <span id="wrong">0</span><br>
+      Correct:            <span id="correct">0</span><br>
+      Tries:              <span id="tries">0</span><br>
+      Percentage correct: <span id="percentage">0</span>%
+    </div>
+    <div id="menu">
+      <input type="text" id="username_input" placeholder="name player"><br>
+      <input type="number" id="length_input" min="1" placeholder="sequence length"><br>
+      <button id="startButton">START</button>
+    </div>
+  </body>
+</html>
+<body>
+  <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+  <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-app.js"></script>
+
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.3.0/firebase-firestore.js"></script>
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyC_aHKYFGGEZ_dShlVukoYmlR1ZufAIbzA",
+      authDomain: "flatearthbot-89399.firebaseapp.com",
+      databaseURL: "https://flatearthbot-89399.firebaseio.com",
+      projectId: "flatearthbot-89399",
+      storageBucket: "flatearthbot-89399.appspot.com",
+      messagingSenderId: "749286173436",
+      appId: "1:749286173436:web:0d2cb303bd31bf7d"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+</body>

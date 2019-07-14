@@ -1,0 +1,49 @@
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#text {
+  width: 100%;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 50px;
+}
+
+#input {
+  width: 100%;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 50px;
+  display: none;
+}
+
+#score {
+  font-size: 25px;
+  padding: 10px;
+  display: none;
+}
+#menu {
+  width: 100%;
+  top: 50%;
+  position: absolute;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 50px;
+}
+#menu #username_input {
+  font-size: 30px;
+  text-align: center;
+}
+#menu #length_input {
+  font-size: 30px;
+  text-align: center;
+}
+#startButton {
+  width: 150px;
+  height: 50px;
+}
