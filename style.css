@@ -23,7 +23,7 @@ body {
 }
 
 #score {
-  font-size: 25px;
+  font-size: 23px;
   padding: 10px;
   display: none;
 }
@@ -38,10 +38,12 @@ body {
 #menu #username_input {
   font-size: 30px;
   text-align: center;
+  max-width: 90%;
 }
 #menu #length_input {
   font-size: 30px;
   text-align: center;
+  max-width: 90%;
 }
 #startButton {
   width: 150px;
