@@ -99,14 +99,6 @@ function createGraph(userScores) {
 
   let sortedDates = Object.keys(userScores).sort((a, b) => Number(a)-Number(b))
 
-  let allDates = []
-  for(let date of sortedDates) {
-    let newDate = new Date()
-    newDate.setTime(date)
-    allDates.push(newDate)
-  }
-  console.log(allDates)
-
   let startDate = Number(sortedDates[0])
   let endDate = Date.now()
 
@@ -131,9 +123,6 @@ function createGraph(userScores) {
 
       data.push({t: x, y: y})
     }
-    
-    console.log(data, 'data')
-    console.log(scores, 'scores')
 
     let randomColor = colorToRGB(getRandomColor())
     datasets.push({
@@ -148,7 +137,6 @@ function createGraph(userScores) {
     let chart = new Chart($('#chart'), {
     type: 'line',
     data: {
-      labels: allDates,
       datasets: datasets
     },
     options: {
@@ -176,7 +164,6 @@ function createGraph(userScores) {
   })
 
   console.log(datasets)
-  console.log(chart)
 }
 
 function getRandomColor() {
