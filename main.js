@@ -129,8 +129,6 @@ function start() {
 
   // other
   $('body').css('background-color', backgroundColor)
-  $('#username_input').val('')
-  $('#length_input').val(5)
 
   // on start click
   $('#menu').show()
