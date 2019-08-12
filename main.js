@@ -108,7 +108,7 @@ function showStatistics(userScores) {
     <div class="scoreNum">${score.percentage}%</div>
     <div class="score"></div>
   </div>
-  <div class="date">LENGTH: ${score.length}</div>
+  <div class="length">LENGTH: ${score.length}</div>
   <hr>
 </div>
     `)

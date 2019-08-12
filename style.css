@@ -116,6 +116,9 @@
   position: relative;
 
 }
+#history .scores .score .length {
+  margin-top: 50px;
+}
 #history .scores .score .scoreBar {
   width: 100%;
   background-color: red;
