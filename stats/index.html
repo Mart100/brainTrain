@@ -8,6 +8,11 @@
     <!-- Jquery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+    <!-- Moment.js -->
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
+    <!-- Chart.JS -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.min.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-140200727-6"></script>
     <script>
@@ -24,19 +29,24 @@
 
   </head>
   <body id="body">
-    <div id="text"></div>
-    <input type="text" id="input">
-    <div id="score">
-      Wrong:              <span id="wrong">0</span><br>
-      Correct:            <span id="correct">0</span><br>
-      Tries:              <span id="tries">0</span><br>
-      Percentage correct: <span id="percentage">0</span>%
+    <div id="improvement">
+      <div class="header">IMPROVEMENT</div>
+      <div id="chartCont"><canvas id="chart"></canvas></div>
     </div>
-    <div id="menu">
-      <input type="text" id="username_input" placeholder="name player"><br>
-      <input type="number" id="length_input" min="1" placeholder="sequence length"><br>
-      <button id="startButton">START</button><br>
-      <button id="statistics_button">See Statistics</button>
+
+    <div id="average">
+      <div class="header">AVERAGE PER LENGTH</div>
+      <table>
+        <tr>
+          <th>Length</th>
+          <th>Score</th>
+        </tr>
+      </table>
+    </div>
+
+    <div id="history">
+      <div class="header">SCORES HISTORY</div>
+      <div class="scores"></div>
     </div>
   </body>
 </html>

@@ -19,105 +19,10 @@ $(() => {
   })
 
   $('#statistics_button').on('click', () => {
-    db.collection("brainTrain-users").doc($('#username_input').val()).collection('scores').get().then((coll) => {
-      let userScores = {}
-      coll.forEach((doc) => { userScores[doc.id] = doc.data() })
-      showStatistics(userScores)
-    })
-    $('#body').html(' ')
+    window.location = `./stats/index.html?name=${$('#username_input').val()}`
   })
 
 })
-
-function showStatistics(userScores) {
-  console.log(userScores)
-
-    // create average
-  $('#body').append(`
-<div id="average">
-  <div class="header">AVERAGE PER LENGTH</div>
-  <table>
-    <tr>
-      <th>Length</th>
-      <th>Score</th>
-    </tr>
-  </table>
-</div>
-`)
-
-  // get scores per length
-  let scoresPerLength = {}
-  for(let dateMS in userScores) {
-    let score = userScores[dateMS]
-    if(scoresPerLength[score.length] == undefined) scoresPerLength[score.length] = []
-    scoresPerLength[score.length].push(score.percentage)
-  }
-
-  // calculate average per length
-  let averagePerLength = {}
-  for(let length in scoresPerLength) {
-    let scoreCount = scoresPerLength[length].length
-    let total = 0
-    for(let score of scoresPerLength[length]) total += score
-
-    let average = total / scoreCount
-    averagePerLength[length] = average
-  }
-  console.log(averagePerLength)
-
-  // add averages to table
-  for(let length in averagePerLength) {
-    let average = averagePerLength[length]
-
-    $('#average table').append(`
-<tr class="cell" id="cell-${length}">
-  <td>${length}</td>
-  <td class="score">
-    <div class="scoreBar">
-      <div class="scoreNum">${average}%</div>
-      <div class="score" style="width: ${average}%;"></div>
-    </div>
-  </td>
-</tr>
-    `)
-
-  }
-
-  // create history
-  $('#body').append(`
-<div id="history">
-  <div class="header">SCORES HISTORY</div>
-  <div class="scores"></div>
-</div>
-`)
-
-  // add all scores to history
-  for(let dateMS in userScores) {
-    let score = userScores[dateMS]
-
-    let date = new Date()
-    date.setTime(dateMS)
-
-    let dateSegments = date.toString().split(' ')
-    let dateString = dateSegments[4]+' '+dateSegments[1]+' '+dateSegments[2]+' '+dateSegments[3]
-
-    $('#history .scores').prepend(`
-<div id="score-${dateMS}" class="score">
-  <div class="date">DATE: ${dateString}</div>
-  <div class="scoreBar">
-    <div class="scoreNum">${score.percentage}%</div>
-    <div class="score"></div>
-  </div>
-  <div class="length">LENGTH: ${score.length}</div>
-  <hr>
-</div>
-    `)
-
-    $(`#score-${dateMS} .scoreBar .score`).css('width', `${score.percentage}%`)
-
-  }
-
-}
 
 
 function start() {
