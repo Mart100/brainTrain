@@ -101,7 +101,7 @@ function showStatistics(userScores) {
     let dateSegments = date.toString().split(' ')
     let dateString = dateSegments[4]+' '+dateSegments[1]+' '+dateSegments[2]+' '+dateSegments[3]
 
-    $('#history .scores').append(`
+    $('#history .scores').prepend(`
 <div id="score-${dateMS}" class="score">
   <div class="date">DATE: ${dateString}</div>
   <div class="scoreBar">
