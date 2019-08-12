@@ -1,4 +1,4 @@
-body {
+#body {
   margin: 0px;
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -39,13 +39,161 @@ body {
   font-size: 30px;
   text-align: center;
   max-width: 90%;
+  border: none;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0, 0.2);
+  padding: 10px;
+
 }
 #menu #length_input {
-  font-size: 30px;
+  font-size: 25px;
+  margin-top: 20px;
   text-align: center;
   max-width: 90%;
+  padding: 10px;
+  border: none;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0, 0.2);
 }
+
 #startButton {
-  width: 150px;
+  width: 200px;
+  margin-top: 20px;
+
+  border: none;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0, 0.2);
+  cursor: pointer;
+  background-color: rgb(210, 210, 210);
   height: 50px;
+  font-size: 20px;
+  font-weight: bold;
+  transition-duration: 0.5s;
+}
+#startButton:hover {
+  background-color: rgb(100, 100, 100);
+  color: white;
+}
+#statistics_button {
+  width: 150px;
+  margin-top: 20px;
+
+  border: none;
+  box-shadow: 2px 2px 5px 2px rgba(0,0,0, 0.2);
+  cursor: pointer;
+  background-color: rgb(210, 210, 210);
+  height: 50px;
+  font-size: 15px;
+  font-weight: bold;
+  transition-duration: 0.5s;
+}
+#statistics_button:hover {
+  background-color: rgb(100, 100, 100);
+  color: white;
+}
+
+#history {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+  height: auto;
+  background-color: rgb(250, 250, 250);
+}
+#history .header {
+  background-color: rgb(240, 240, 240);
+  padding: 20px;
+  font-size: 40px;
+  font-weight: bold;
+}
+#history .scores {
+  text-align: center;
+}
+#history .scores .score {
+  height: 100px;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  margin: auto;
+  position: relative;
+
+}
+#history .scores .score .scoreBar {
+  width: 100%;
+  background-color: red;
+  height: 50px;
+  position: absolute;
+
+}
+#history .scores .score .scoreBar .score {
+  background-color: green;
+  height: 50px;
+  margin-left: 0px;
+  
+}
+#history .scores .score .scoreBar .scoreNum {
+  margin-left: 50%;
+  transform: translateX(-50%);
+  position: absolute;
+  color: white;
+  z-index: 25;
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+
+}
+
+#average {
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+  height: auto;
+  background-color: rgb(250, 250, 250);
+}
+#average .header {
+  background-color: rgb(240, 240, 240);
+  padding: 20px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#average table {
+  margin: 0px 20px;
+}
+
+#average table .cell {
+  height: 60px;
+}
+#average table .cell .score {
+  width: 70%;
+  position: absolute;
+}
+#average table .cell .score .scoreBar {
+  width: 100%;
+  max-width: 700px;
+  position: absolute;
+  background-color: red;
+  height: 50px;
+
+}
+#average table .cell .score .scoreBar .score {
+  background-color: green;
+  height: 50px;
+  position: relative;
+  margin-left: 0px;
+  
+}
+#average table .cell .score .scoreBar .scoreNum {
+  position: absolute;
+  z-index: 20;
+  margin-left: 50%;
+  color: white;
+  transform: translateX(-50%);
+  font-weight: bold;
+  font-size: 20px;
+  margin-top: 10px;
+
+}
+#average table .cell td {
+  font-size: 30px;
+  text-align: center;
+
 }
