@@ -39,7 +39,7 @@ function showStatistics(userScores) {
 
   // add averages to table
   for(let length in averagePerLength) {
-    let average = averagePerLength[length]
+    let average = Math.round(averagePerLength[length])
 
     $('#average table').append(`
 <tr class="cell" id="cell-${length}">
